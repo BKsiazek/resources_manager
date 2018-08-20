@@ -1,0 +1,25 @@
+<nav class="navbar navbar-inverse">
+	<div class="">
+		<a class="navbar-brand">Resources Manager</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="/">Home</a></li>
+			<li><a href="/list-products">Products</a></li>
+			<c:if test="${pageContext.request.isUserInRole('ADMIN')}">
+				<li><a href="/list-users">Users</a></li>
+			</c:if>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<c:if test="${pageContext.request.isUserInRole('ADMIN')}">
+				<li class="nav-item">
+					<a><img src="images/star.png" height="16" width="18"></a>
+				</li>
+			</c:if>
+			<li class="nav-item">
+				<a class="nav-link disabled">${pageContext.request.userPrincipal.name}</a>
+			</li>
+			<li><a href="/logout">Log out</a></li>
+		</ul>
+	</div>
+</nav>
