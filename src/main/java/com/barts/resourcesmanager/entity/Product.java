@@ -12,7 +12,9 @@ public class Product {
 	private long id;
 	
 	private String name;
+	
 	private String description;
+	
 	private int quantity;
 
 	private boolean singleUse;
